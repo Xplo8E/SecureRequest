@@ -1,4 +1,4 @@
-# SecureRequest Project
+# SecureRequest - sample app as lab
 
 This project is a secure note-taking application with a server-side component.
 
