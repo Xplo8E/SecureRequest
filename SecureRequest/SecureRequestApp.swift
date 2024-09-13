@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct SecureRequestApp: App {
+    @StateObject private var noteViewModel = NoteViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(noteViewModel)
         }
     }
 }
