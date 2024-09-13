@@ -22,9 +22,7 @@ To run the server, navigate to the  directory and run .
 
 To run the client, open the  file in Xcode and run the application.
 
-## Contributing
 
-Contributions are welcome! Please submit a pull request with your changes.
 
 ## License
 
