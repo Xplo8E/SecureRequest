@@ -1,4 +1,4 @@
-# SecureRequest Project
+# SecureRequest - sample app as lab
 
 This project is a secure note-taking application with a server-side component.
 
@@ -22,9 +22,7 @@ To run the server, navigate to the  directory and run .
 
 To run the client, open the  file in Xcode and run the application.
 
-## Contributing
 
-Contributions are welcome! Please submit a pull request with your changes.
 
 ## License
 
