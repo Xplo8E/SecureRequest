@@ -9,18 +9,34 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isLoggedIn = false
+    @State private var serverAddress = ""
+    @State private var isBaseURLSet = false
     @EnvironmentObject var noteViewModel: NoteViewModel
 
     var body: some View {
         Group {
-            if isLoggedIn {
+            if !isBaseURLSet {
+                VStack {
+                    TextField("Enter Server Address (IP:Port)", text: $serverAddress)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding()
+                    Button("Set Server Address") {
+                        let fullBaseURL = "http://\(serverAddress)/api"
+                        Constants.setBaseURL(fullBaseURL)
+                        isBaseURLSet = true
+                    }
+                    .disabled(serverAddress.isEmpty)
+                }
+            } else if isLoggedIn {
                 NotesListView()
             } else {
                 LoginView(isLoggedIn: $isLoggedIn)
             }
         }
         .onAppear {
-            testEncryption()
+            if isBaseURLSet {
+                testEncryption()
+            }
         }
     }
     
